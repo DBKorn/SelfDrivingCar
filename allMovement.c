@@ -4,10 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-const int PIN_BASE = 300;
-const int MAX_PWM = 4096;
-const int HERTZ = 50;
-
 /*
  * wiringPi C library use different GPIO pin number system from BCM pin numberwhich are often used by Python, 
  * you can lookup BCM/wPi/Physical pin relation by following Linux command : gpio readall
