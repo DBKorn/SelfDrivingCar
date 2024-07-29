@@ -5,7 +5,6 @@
  */
 
 
-void setup();
 void reverse(int fd,int speed);
 void forward(int fd,int speed);
 void rightTurn(int fd,int left_speed,int right_speed);
