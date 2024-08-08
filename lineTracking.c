@@ -91,7 +91,7 @@ int main(void)
         else if ( (!isLeft && isMiddle && !isRight)  || (isLeft && isMiddle && isRight) )
         {
             printf("%d-%d-%d Straight ahead\n",isLeft, isMiddle, isRight);
-            forward(fd,midSpeed){
+            forward(fd,midSpeed);
         }
         else if (isLeft && !isMiddle && !isRight)
         {
