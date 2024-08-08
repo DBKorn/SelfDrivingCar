@@ -33,8 +33,8 @@ void rightTurn(int fd,int left_speed,int right_speed){
     digitalWrite(leftSideIn2,HIGH);
     digitalWrite(rightSideIn3,HIGH);
     digitalWrite(rightSideIn4,LOW); 
-    pca9685PWMWrite(fd, ENA, 0, left_speed);
-    pca9685PWMWrite(fd, ENB, 0, right_speed);
+    pca9685PWMWrite(fd, enableA, 0, left_speed);
+    pca9685PWMWrite(fd, enableB, 0, right_speed);
 
 }
 void leftTurn(int fd,int left_speed,int right_speed){
@@ -42,8 +42,8 @@ void leftTurn(int fd,int left_speed,int right_speed){
     digitalWrite(leftSideIn2,LOW);
     digitalWrite(rightSideIn3,LOW);
     digitalWrite(rightSideIn4,HIGH); 
-    pca9685PWMWrite(fd, ENA, 0, left_speed);
-    pca9685PWMWrite(fd, ENB, 0, right_speed);
+    pca9685PWMWrite(fd, enableA, 0, left_speed);
+    pca9685PWMWrite(fd, enableB, 0, right_speed);
 }
 void rotateClockwise(int fd,int speed){
     digitalWrite(leftSideIn1,LOW);
@@ -66,6 +66,6 @@ void stop(int fd){
     digitalWrite(leftSideIn2,LOW);
     digitalWrite(rightSideIn3,LOW);
     digitalWrite(rightSideIn4,LOW); 
-    pca9685PWMWrite(fd, ENA, 0, 0);
-    pca9685PWMWrite(fd, ENB, 0, 0);
+    pca9685PWMWrite(fd, enableA, 0, 0);
+    pca9685PWMWrite(fd, enableB, 0, 0);
 }
