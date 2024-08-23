@@ -71,9 +71,9 @@ int main(void)
     int isMiddle;
     int isRight;
 
-	while (1)
-	{
-		isLeft = !digitalRead(leftSensor);
+     while (1)
+     {
+	isLeft = !digitalRead(leftSensor);
         isMiddle = !digitalRead(middleSensor);
         isRight = !digitalRead(rightSensor);
 
