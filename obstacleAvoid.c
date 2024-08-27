@@ -126,7 +126,7 @@ int main(void)
 		else if ((!obstacleOnLeft && !obstacleInMiddle && !obstacleOnRight) || (!obstacleOnLeft && obstacleInMiddle && !obstacleOnRight) )
 		{
 			printf("%d - %d - %d Forward\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
-			go_advance(fd,MID_SPEED);
+			forward(fd,MID_SPEED);
             		delay(MID_DELAY);  
 			stop(fd);
             		delay(SHORT_DELAY);	
