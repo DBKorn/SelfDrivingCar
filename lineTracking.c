@@ -11,8 +11,8 @@ const int hertz = 50;
 int fd;
  
  //define L298N control pins using wPi
-const int enableA = 0;  //left motor speed pin ENA connect to PCA9685 port 0
-const int enableB = 1;  //right motor speed pin ENB connect to PCA9685 port 1
+const int enableA = 0;  //left motor speed pin to PCA9685 port 0
+const int enableB = 1;  //right motor speed pin to PCA9685 port 1
 const int leftSideIn1 = 4;  
 const int leftSideIn2 = 5;  
 const int rightSideIn3 = 2; 
