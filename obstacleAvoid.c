@@ -70,16 +70,16 @@ int getDistance() {
 }
 int main(void)
 {
-    if(wiringPiSetup()==-1){
-        printf("setup wiringPi failed!\n");
-        printf("please check your setup\n");
-        return -1;
-    }
+    	if(wiringPiSetup()==-1){
+        	printf("setup wiringPi failed!\n");
+        	printf("please check your setup\n");
+        	return -1;
+    	}
 	setup();
 	
-    
+	
 	printf("Lesson 3: Obstacle Avoiding\n");
- 
+	
 	// Setup with pinbase 300 and i2c location 0x40
 	int fd = pca9685Setup(PIN_BASE, 0x40, HERTZ);
 	if (fd < 0)
@@ -88,87 +88,87 @@ int main(void)
 		return fd;
 	}
 
-    bool obstacleOnLeft;
-    bool obstacleInMiddle;
-    bool obstacleOnRight;
+    	bool obstacleOnLeft;
+    	bool obstacleInMiddle;
+    	bool obstacleOnRight;
 
 
 	while (1)
 	{
 		pca9685PWMWrite(fd, SERVO_PIN, 0, LEFT);
 		delay(MID_DELAY);
-        obstacleOnLeft = getDistance()<OBSTACLE;
+        	obstacleOnLeft = getDistance()<OBSTACLE;
 		
 		pca9685PWMWrite(fd, SERVO_PIN, 0, CENTER);
 		delay(MID_DELAY);
-        obstacleInMiddle = getDistance()<OBSTACLE;
+		obstacleInMiddle = getDistance()<OBSTACLE;
 		
 		pca9685PWMWrite(fd, SERVO_PIN, 0, RIGHT);
 		delay(MID_DELAY);
-        obstacleOnRight = getDistance()<OBSTACLE;
+        	obstacleOnRight = getDistance()<OBSTACLE;
 
-        if (!obstacleOnLeft && obstacleInMiddle && obstacleOnRight)
+        	if (!obstacleOnLeft && obstacleInMiddle && obstacleOnRight)
 		{
 			printf("%d - %d - %d Hard left\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
 			leftTurn(fd, LOW_SPEED, HIGH_SPEED);
-            delay(MID_DELAY);  
-            stop(fd);
-            delay(SHORT_DELAY);	
+		        delay(MID_DELAY);  
+		        stop(fd);
+		        delay(SHORT_DELAY);	
 		} 
-        else if (!obstacleOnLeft && !obstacleInMiddle && obstacleOnRight)
+        	else if (!obstacleOnLeft && !obstacleInMiddle && obstacleOnRight)
 		{
-            printf("%d - %d - %d Slight left\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
+            		printf("%d - %d - %d Slight left\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
 			leftTurn(fd, LOW_SPEED, MID_SPEED);
-            delay(MID_DELAY);  
-            stop(fd);
-            delay(SHORT_DELAY);		
+            		delay(MID_DELAY);  
+            		stop(fd);
+            		delay(SHORT_DELAY);		
 		}
-        else if ((!obstacleOnLeft && !obstacleInMiddle && !obstacleOnRight) || (!obstacleOnLeft && obstacleInMiddle && !obstacleOnRight) )
+		else if ((!obstacleOnLeft && !obstacleInMiddle && !obstacleOnRight) || (!obstacleOnLeft && obstacleInMiddle && !obstacleOnRight) )
 		{
 			printf("%d - %d - %d Forward\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
 			go_advance(fd,MID_SPEED);
-            delay(MID_DELAY);  
-            stop(fd);
-            delay(SHORT_DELAY);	
+            		delay(MID_DELAY);  
+			stop(fd);
+            		delay(SHORT_DELAY);	
 		} 
-        else if (obstacleOnLeft && !obstacleInMiddle && !obstacleOnRight)
+        	else if (obstacleOnLeft && !obstacleInMiddle && !obstacleOnRight)
 		{	
 			printf("%d - %d - %d Slight right\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
 			rightTurn(fd, MID_SPEED, LOW_SPEED);
-            delay(MID_DELAY);  
-            stop(fd);
-            delay(SHORT_DELAY);
+            		delay(MID_DELAY);  
+            		stop(fd);
+            		delay(SHORT_DELAY);
 		}
-        else if (obstacleOnLeft && obstacleInMiddle && !obstacleOnRight)
+        	else if (obstacleOnLeft && obstacleInMiddle && !obstacleOnRight)
 		{
 			printf("%d - %d - %d Hard right\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
 			rightTurn(fd, HIGH_SPEED, LOW_SPEED);
-            delay(MID_DELAY);  
-            stop(fd);
-            delay(SHORT_DELAY);	
+            		delay(MID_DELAY);  
+            		stop(fd);
+            		delay(SHORT_DELAY);	
 		}
-        else if (obstacleOnLeft && obstacleInMiddle && obstacleOnRight) 
+        	else if (obstacleOnLeft && obstacleInMiddle && obstacleOnRight) 
 		{
-            printf("%d - %d - %d Dead end, turning back\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
+            		printf("%d - %d - %d Dead end, turning back\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
 			reverse(fd, LOW_SPEED);
-            delay(LONG_DELAY);  
-            stop(fd);
-            delay(SHORT_DELAY);	
+            		delay(LONG_DELAY);  
+            		stop(fd);
+            		delay(SHORT_DELAY);	
 		} 
-        else if (obstacleOnLeft && !obstacleInMiddle && obstacleOnRight)
+		else if (obstacleOnLeft && !obstacleInMiddle && obstacleOnRight)
 		{
-            printf("%d - %d - %d Fork in the road\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
+            		printf("%d - %d - %d Fork in the road\n", obstacleOnLeft, obstacleInMiddle, obstacleOnRight);
 
-            if (rand()%2==0)
-            {
-                printf("Turning hard right\n",val);
-                rightTurn(fd, HIGH_SPEED, LOW_SPEED);
-            }
-            else
-            {
-                printf("Turning hard left\n",val);
-                leftTurn(fd, LOW_SPEED, HIGH_SPEED);
-            }
+            		if (rand()%2==0)
+            		{
+                		printf("Turning hard right\n",val);
+                		rightTurn(fd, HIGH_SPEED, LOW_SPEED);
+            		}
+            		else
+            		{
+                		printf("Turning hard left\n",val);
+                		leftTurn(fd, LOW_SPEED, HIGH_SPEED);
+            		}
 		}
 	}
 	return 0;
