@@ -9,23 +9,24 @@
 #define PIN_BASE 300
 #define HERTZ 50
 
-#define ENABLE_A 0  //left motor speed pin ENA connect to PCA9685 port 0
-#define ENABLE_B 1  //right motor speed pin ENB connect to PCA9685 port 1
-#define LEFT_SIDE_IN_1 4  //Left motor leftSideIn1 connect to wPi pin# 4 (Physical 16,BCM GPIO 23)
-#define LEFT_SIDE_IN_2 5  //Left motor leftSideIn2 connect to wPi pin# 5 (Physical 18,BCM GPIO 24)
-#define RIGHT_SIDE_IN_1 2  //right motor rightSideIn3 connect to wPi pin# 2 (Physical 13,BCM GPIO 27)
-#define RIGHT_SIDE_IN_2 3  //right motor rightSideIn4 connect to wPi pin# 3 (Physical 15,BCM GPIO 22)
+
+#define ENABLE_A 0  //left motor speed pin ENABLE_A connect to PCA9685 port 0
+#define ENABLE_B 1  //right motor speed pin ENABLE_B connect to PCA9685 port 1
+#define LEFT_SIDE_IN_1 4  //Left motor leftSideIn1 connect to wPi pin# 4 
+#define LEFT_SIDE_IN_2 5  //Left motor leftSideIn2 connect to wPi pin# 5
+#define RIGHT_SIDE_IN_1 2  //right motor rightSideIn3 connect to wPi pin# 2
+#define RIGHT_SIDE_IN_2 3  //right motor rightSideIn4 connect to wPi pin# 3
 
 #define LOW_SPEED 1000
 #define MID_SPEED 2000
 #define HIGH_SPEED 3000
 
-#define SERVO_PIN 15  //right motor speed pin ENB connect to PCA9685 port 1
+#define SERVO_PIN 15
 #define LEFT 400 //ultrasonic sensor facing right
 #define CENTER 280//ultrasonic sensor facing front
 #define RIGHT 160 //ultrasonic sensor facing left
-#define TRIG_PIN 28 //wPi#28=BCM GPIO#20=Physical pin#38
-#define ECHO_PIN 29 //wPi#29=BCM GPIO#21=Physical pin#40
+#define TRIG_PIN 28 
+#define ECHO_PIN 29 
 #define OBSTACLE 20
 #define SHORT_DELAY 200
 #define MID_DELAY  300
