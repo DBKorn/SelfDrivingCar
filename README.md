@@ -5,9 +5,11 @@ The modes are/will be:<br/>
   -Line tracking<br/>
   -Obstacle avoiding<br/>
   -Light tracking<br/>
-  -Remote control<br/>
+  -Remote control (coming soon)<br/>
+
+Each mode is its own file, named accordingly. To run in a particular mode, simply compile and run that file. <br/>
   
-The allMovements.c file is a library for all the methods that control the car's movements (go forwrds turn right/left etc)<br/>
+The allMovements.c file is a library for all the methods that control the car's movements (go forwards turn right/left etc)<br/>
 
 A L298N motor driver is used to control the speed and direction of the motors.<br/>
 
@@ -16,3 +18,6 @@ Line tracking mode: The car will follow a path marked by a line drawn the ground
 Obstacle avoiding mode: The car will drive freely until it runs into some obstacle and will avoid it. It uses a HC-SR04 ultrasonic module to measure how far away obstacles are. It sits atop a servo so it can rotate right and left to find an obstacle free path.<br/>
 
 Light tracking mode: The car will follow the light shined by a flashlight or similar device. It must be placed in a darkened room for best results. It uses two photoresistors mounted on the front corners of the car. It measures the light, compares which side is brighter, and moves accordingly. The photoresistors are connected to an ADC7830 to read the exact voltage so we will know which side has the brighter light. <br/>
+
+
+The PCA9685 library is made by OSOYOO. <br/>
