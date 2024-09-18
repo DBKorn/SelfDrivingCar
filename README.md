@@ -1,11 +1,25 @@
 # SelfDrivingCar
-A self driving car with various modes, made with a raspberry pi. All files will be uploaded as I complete them, in whichever order I happen to do so
+A self driving car with various modes, made with a raspberry pi. All files will be uploaded as I complete them, in whichever order I happen to do so <br/>
+
+Components: <br/>
+   - 1 RaspberryPi 4B
+   - ADC7830 analog to digical converter 
+   - 1 L298N motor driver
+   - 2 photoresistors (for light tracking)
+   - 1 HC-SR04 Ultrasonic ranger (for abstacle avoiding)
+   - 1 servo to rotate ultrasonic ranger
+   - 4 wheels
+   - 4 DC motors
+   - 1 3 sensor infrared sensor (for line tracking)
+   - 1 breadboard
+   - Lots of male-to-male and female-to-male jumper wires
+   - Chassis and various screws, nuts, bolts etc for the body of the car and the hold all components together
 
 The modes are/will be:<br/>
-  -Line tracking<br/>
-  -Obstacle avoiding<br/>
-  -Light tracking<br/>
-  -Remote control (coming soon)<br/>
+  - Line tracking
+  - Obstacle avoiding
+  - Light tracking
+  - Remote control (coming soon)
 
 Each mode is its own file, named accordingly. To run in a particular mode, simply compile and run that file. <br/>
   
