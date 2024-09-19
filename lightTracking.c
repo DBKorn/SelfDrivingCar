@@ -41,7 +41,7 @@ int setup(){
 
 
 float getVoltage(int channel){
-    return (float) analogRead(channel)/255.0*3.3;
+    return (float) ads7830AnalogRead(channel)/255.0*3.3;
 }
 
 int main(){
