@@ -21,6 +21,7 @@
 #define MID_SPEED 2000
 #define HIGH_SPEED 3000
 
+//input pins on ads7830
 #define LEFT_PHOTORESISTOR 0
 #define RIGHT_PHOTORESISTOR 1
 
