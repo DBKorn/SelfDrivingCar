@@ -3,7 +3,7 @@ A self driving car with various modes, made with a raspberry pi. All files will 
 
 Components: <br/>
    - 1 RaspberryPi 4B
-   - ADC7830 analog to digical converter 
+   - ADS7830 analog to digical converter 
    - 1 L298N motor driver
    - 2 photoresistors (for light tracking)
    - 1 HC-SR04 Ultrasonic ranger (for abstacle avoiding)
