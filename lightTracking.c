@@ -58,7 +58,8 @@ int main(){
 		printf("Error in pca9685 setup\n");
 		return fd;
 	}
-	setup();
+  ads7830Init(0x4b);
+  setup();
 
 
   float left;
